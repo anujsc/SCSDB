@@ -8,7 +8,7 @@ import axios from "../utilis/axios";
 import Cards from "./Partials/Cards";
 import Loading from "./Loading";
 import InfiniteScroll from "react-infinite-scroll-component";
-import PopCard from "./Partials/PopCard";
+
 
 function Popular() {
   document.title="SCSDB | Popular";
@@ -71,7 +71,7 @@ function Popular() {
         hasMore={true}
         loader={<h1>loading</h1>}
       >
-        <PopCard data={Popular} title={Category} />
+        <Cards data={Popular} title={Category} />
       </InfiniteScroll>
     </div>
   ) : (

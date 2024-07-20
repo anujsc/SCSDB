@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "../utilis/axios";
 import Loading from "./Loading";
 import InfiniteScroll from "react-infinite-scroll-component";
-import TvCards from "./Partials/TvCards";
+import Cards from "./Partials/Cards";
 
 function Tv() {
   document.title = "SCSDB | Tv Shows";
@@ -68,7 +68,7 @@ function Tv() {
         hasMore={true}
         loader={<h1>loading</h1>}
       >
-        <TvCards data={Tv} title={Category} />
+        <Cards data={Tv} title="tv" />
       </InfiniteScroll>
     </div>
   ) : (

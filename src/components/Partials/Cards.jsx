@@ -5,7 +5,7 @@ function Cards({ data, title }) {
   return (
     <div className="flex flex-wrap px-[3%]  bg-[#1F1E24]">
       {data.map((c, i) => (
-        <Link key={i} className="opacity-55 hover:opacity-100 duration-75 mt-[5vh] pl-[10vh] w-[45vh] mr-[2%] mb-[5%] ">
+        <Link to={`/${c.media_type || title}/details/${c.id}`} key={i} className="opacity-55 hover:opacity-100 duration-75 mt-[5vh] pl-[10vh] w-[45vh] mr-[2%] mb-[5%] ">
           <img
             className="head h-[40vh] w-[34vh] object-cover  "
             src={`https://image.tmdb.org/t/p/original/${

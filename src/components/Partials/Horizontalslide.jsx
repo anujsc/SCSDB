@@ -1,6 +1,7 @@
 import axios from "../../utilis/axios";
 import React, { useEffect, useState } from "react";
 import Loading from "../Loading";
+import { Link } from "react-router-dom";
 
 function Horizontalslide() {
   const [Horicards, setHoricards] = useState([]);
@@ -13,8 +14,7 @@ function Horizontalslide() {
       console.log("error:", error);
     }
   };
-  console.log(Horicards);
-
+  
   useEffect(() => {
     !!Horicards && getCards();
   }, []);
@@ -29,7 +29,7 @@ function Horizontalslide() {
 
       <div className=" w-full flex ml-9 mr-3 mt-2 gap-[6vh] text-white overflow-x-auto duration-300">
       {Horicards.map((item, index) => (
-          <div className=" h-[35vh] min-w-[15%]">
+          <Link to={`/${item.media_type || title}/details/${item.id}`} className=" h-[35vh] min-w-[15%]">
             <img
               className=" h-[18vh] object-cover"
               src={`https://image.tmdb.org/t/p/original/${
@@ -39,7 +39,7 @@ function Horizontalslide() {
             />
             <h1 className=" text-[2.3vh] font-bold py-2 leading-4">{item.title || item.original_name || item.original_title}</h1>
             <p className=" text-[2vh] opacity-60">{item.overview.slice(0,150)} <p className=" text-[#6556cd] opacity-100">more...</p> </p>
-          </div>
+          </Link>
       ))}
        </div>
     </div>

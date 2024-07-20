@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "../utilis/axios";
 import Loading from "./Loading";
 import InfiniteScroll from "react-infinite-scroll-component";
-import PeoCrads from "./Partials/PeoCrads";
+import Cards from "./Partials/Cards";
 
 function People() {
   document.title = "SCSDB | People";
@@ -69,7 +69,7 @@ function People() {
         hasMore={true}
         loader={<h1>loading</h1>}
       >
-        <PeoCrads data={People} title={Category} />
+        <Cards data={People} title="people" />
       </InfiniteScroll>
     </div>
   ) : (

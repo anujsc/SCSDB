@@ -8,8 +8,7 @@ import axios from "../utilis/axios";
 import Cards from "./Partials/Cards";
 import Loading from "./Loading";
 import InfiniteScroll from "react-infinite-scroll-component";
-import PopCard from "./Partials/PopCard";
-import MovCards from "./Partials/MovCards";
+
 
 function Movies() {
   document.title="SCSDB | Movies";
@@ -72,7 +71,7 @@ function Movies() {
         hasMore={true}
         loader={<h1>loading</h1>}
       >
-        <MovCards data={Movies} title={Category} />
+        <Cards data={Movies} title="movie" />
       </InfiniteScroll>
     </div>
   ) : (

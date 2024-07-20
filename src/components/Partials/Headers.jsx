@@ -17,7 +17,7 @@ function Headers() {
       console.log("error:", error);
     }
   };
-  console.log(Header);
+
 
   useEffect(() => {
     !!Header && getHeader();

@@ -37,7 +37,7 @@ function Topnav() {
       {query.length > 0 && (
         <div className=" bg-[#6556cd] h-[50vh] w-[50%] top-[100%] absolute overflow-auto">
           {searches.map((item, index) => (
-            <Link
+            <Link to={`/${item.media_type || title}/details/${item.id}`}
               key={index}
               className=" flex justify-start items-center gap-5 w-[100%] font-semibold opacity-75 hover:opacity-100 hover:bg-[#7f71db] duration-250 border-zinc-200 border-b-[1px] p-10"
             >
