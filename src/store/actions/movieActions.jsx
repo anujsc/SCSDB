@@ -9,6 +9,7 @@ export const asynloadmovie = (id) => async (dispatch, getState) => {
     const recommendation = await axios.get(`/movie/${id}/recommendations`);
     const similar = await axios.get(`/movie/${id}/similar`);
     const videos = await axios.get(`/movie/${id}/videos`);
+    const translations = await axios.get(`/movie/${id}/translations`);
     const watchproviders = await axios.get(`/movie/${id}/watch/providers`);
 
     let bigdata = {
@@ -16,6 +17,7 @@ export const asynloadmovie = (id) => async (dispatch, getState) => {
       externalid: externalid.data,
       recommendation: recommendation.data.results,
       similar: similar.data.results,
+      translations: translations.data.translations.map((i)=>i.english_name),
       videos: videos.data.results.find(t=>t.type==="Trailer"),
       watchproviders: watchproviders.data.results.IN,
     };
