@@ -6,6 +6,7 @@ import "remixicon/fonts/remixicon.css";
 import imdb from "/imdb.png";
 import Loading from "./Loading";
 import HorizontalSlide from "./Partials/Horizontalslide"
+import HorizontalPeople from "./Partials/HorizontalPeople";
 
 function MovieDetails() {
   const { info } = useSelector((state) => state.movie);
@@ -75,6 +76,7 @@ function MovieDetails() {
               <span className=" text-[2.3vh] font-medium -tracking-tight">{info.detail.release_date}</span>
               <span className=" text-[2.3vh] font-medium -tracking-tight">{info.detail.genres.map((i)=>i.name).join(",")}</span>
               <span className=" text-[2.3vh] font-medium -tracking-tight">{info.detail.runtime} min</span>
+              <span className=" text-[2.3vh] font-medium -tracking-tight"> <i class="mr-1 ri-star-line"></i> {info.detail.vote_average}</span>
             </div>
             
             <p className="text-[2.3vh] py-3 font-medium italic -tracking-tight">{info.detail.tagline}</p>
@@ -91,8 +93,10 @@ function MovieDetails() {
         {/* part-3 watch */}
         <div className=" pl-5 w-full">
           <div>
+          {info.watchproviders &&
+                info.watchproviders.flatrate ?
             <div className=" flex gap-3 items-center">
-            <h1 className=" text-white text-[2.5vh] font-semibold tracking-tight bg-[#6556cd] px-3 py-2 rounded ">Available On -</h1>
+            <h1 className="recom text-white text-[2.5vh] font-semibold tracking-tight  px-3 py-2 rounded ">Available On -</h1>
               {info.watchproviders &&
                 info.watchproviders.flatrate &&
                 info.watchproviders.flatrate.map((item, index) => (
@@ -103,10 +107,12 @@ function MovieDetails() {
                   />
                   
                 ))}
-            </div>
+            </div>:""}
 
+            {info.watchproviders &&
+                info.watchproviders.rent ?
             <div className=" flex gap-3 items-center">
-            <h1 className=" text-white text-[2.5vh] font-semibold tracking-tight bg-[#6556cd] px-3 py-2 rounded ">Rent On -</h1>
+            <h1 className="recom text-white text-[2.5vh] font-semibold tracking-tight px-3 py-2 rounded ">Rent On -</h1>
               {info.watchproviders &&
                 info.watchproviders.rent &&
                 info.watchproviders.rent.map((item, index) => (
@@ -116,10 +122,12 @@ function MovieDetails() {
                     alt=""
                   />
                 ))}
-            </div>
+            </div>:""}
 
+            {info.watchproviders &&
+                info.watchproviders.buy ?
             <div className=" flex gap-3 items-center ">
-            <h1 className=" text-white text-[2.5vh] font-semibold tracking-tight bg-[#6556cd] px-3 py-2 rounded ">Buy On -</h1>
+            <h1 className="recom text-white text-[2.5vh] font-semibold tracking-tight px-3 py-2 rounded ">Buy On -</h1>
               {info.watchproviders &&
                 info.watchproviders.buy &&
                 info.watchproviders.buy.map((item, index) => (
@@ -129,14 +137,22 @@ function MovieDetails() {
                     alt=""
                   />
                 ))}
-            </div>
+            </div>:""}
           </div>
         </div>
 
         {/* part-4 recommd n similar */}
-        <div className=" mt-[5vh]">
+        <div className=" mt-[1.7vh]">
+          <h1 className=" recom inline-block px-4 py-1 rounded-md text-white font-medium text-[3vh] tracking-tighter translate-x-5 mb-2">Recommendations</h1>
           <HorizontalSlide data={info.recommendation?info.recommendation:info.similar}/>
         </div>
+
+        {/*part-5 cast */}
+        <div className=" mt-[1vh]">
+          <h1 className=" recom inline-block px-4 py-1 rounded-md text-white font-medium text-[3vh] tracking-tighter translate-x-5 mb-2">People Acted</h1>
+          <HorizontalPeople data={info.credits.cast}/>
+        </div>
+
       </div>
     </div>
   ) : (
