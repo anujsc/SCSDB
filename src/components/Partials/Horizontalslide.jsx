@@ -7,7 +7,7 @@ function Horizontalslide({data}) {
     <div className=" w-[160vh] h-[40vh]">
       <div className=" w-full flex ml-9 mr-3 mt-2 gap-[6vh] text-white overflow-x-auto duration-300">
       {data.map((item, index) => (
-          <Link to={`/${item.media_type}/details/${item.id}`} className={` px-1 ${!item.profile_path && item.profile_path === undefined  ?`bg-[#1f1e24]`:""} } h-[38vh] min-w-[15%]`}>
+          <Link to={`/${item.media_type || title}/details/${item.id}`} className={` px-1 ${!item.profile_path && item.profile_path === undefined  ?`bg-[#1f1e24]`:""} } h-[38vh] min-w-[15%]`}>
             <img
               className=" h-[18vh] object-cover"
               src={`https://image.tmdb.org/t/p/original/${

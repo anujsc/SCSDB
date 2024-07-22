@@ -25,7 +25,7 @@ function Headers() {
 
   return Header ? (
     <div className=" h-[62vh] w-full relative  ">
-      <Link to={`/${Header.media_type}/details/${Header.id}`}>
+      <Link>
         <div>
           <img
             className="head h-[62vh] w-full "
@@ -35,6 +35,10 @@ function Headers() {
             alt=""
           />
         </div>
+
+        <Link to={`/${Header.media_type}/details/${Header.id}`} className=" absolute top-0 h-[60vh] w-full">
+
+        </Link>
         <div className=" -translate-y-[24vh]">
           <h1 className=" ml-[5vh] text-[5vh] text-white font-semibold tracking-tight ">
             {Header.title || Header.original_name || Header.original_title}
@@ -51,7 +55,7 @@ function Headers() {
             </div>
           </div>
 
-          <p className=" w-3/2 h-[10vh] overflow-y-auto ml-[5vh] text-white font-semibold tracking-tight ">
+          <p className="inline-block w-3/2 h-[10vh] overflow-y-auto ml-[5vh] text-white font-semibold tracking-tight ">
             {[Header.overview].slice(0, 200)}
           </p>
         </div>

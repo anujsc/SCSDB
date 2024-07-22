@@ -29,11 +29,13 @@ function Home() {
         <Topnav />
         <Headers />
         <div>
-        <h1 className=" bg-[#6556cd] inline-block px-3 rounded-xl text-white text-[3vh] font-medium tracking-tight ml-9 m-3">
+        <h1 className=" bg-[#6556cd] inline-block px-3 rounded-xl text-white text-[3vh] font-medium tracking-tight ml-9 mt-[3vh] m-3">
           Trending
         </h1>
       </div>
-        <Horizontalslide data={Horicards}/>
+        <div className=" mt-[3vh]">
+        <Horizontalslide  data={Horicards}/>
+        </div>
       </div>
     </div>
   );
