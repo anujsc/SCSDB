@@ -24,6 +24,7 @@ function App() {
           <Route path='/tv/details/:id' element={<TvDetails/>}/>
           <Route path='/people' element={<People/>}/>
           <Route path='/people/details/:id' element={<PersonDetails/>}/>
+          <Route path='/person/details/:id' element={<PersonDetails/>}/>
         </Routes>
       </div>
    

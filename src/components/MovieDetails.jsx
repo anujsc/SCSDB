@@ -21,7 +21,7 @@ function MovieDetails() {
   }, [id]);
 
   return info ? (
-    <div className=" h-[140vh] w-full relative ">
+    <div className=" h-[160vh] w-full relative ">
       <img
         className="absolute opacity-65 h-full w-full object-cover  "
         src={`https://image.tmdb.org/t/p/original/${info.detail.backdrop_path}`}
@@ -140,6 +140,8 @@ function MovieDetails() {
             </div>:""}
           </div>
         </div>
+
+        <hr className=" mt-6" />
 
         {/* part-4 recommd n similar */}
         <div className=" mt-[1.7vh]">

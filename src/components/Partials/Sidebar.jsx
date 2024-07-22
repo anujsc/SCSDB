@@ -43,10 +43,10 @@ function Sidebar() {
         </h1>
 
         <Link className=" hover:bg-[#6556cd] hover:text-white p-4 rounded duration-300">
-        <i class=" mr-1 ri-fire-fill"></i> Trending
+        <i class="mr-2 ri-contacts-line"></i>  Contact
         </Link>
         <Link className=" hover:bg-[#6556cd] hover:text-white p-4 rounded duration-300">
-        <i class=" mr-1 ri-star-fill"></i> Popular
+        <i class="ri-information-line mr-2"></i>About
         </Link>
         
       </nav>

@@ -7,6 +7,7 @@ import noimg from "/Noimg.jpg";
 function Topnav() {
   const [query, setquery] = useState("");
   const [searches, setsearches] = useState([]);
+  const [person, setperson] = useState("people")
 
   const getSerches = async () => {
     try {
@@ -17,6 +18,7 @@ function Topnav() {
       console.log("error:", error);
     }
   };
+
 
   useEffect(() => {
     getSerches();
@@ -51,6 +53,7 @@ function Topnav() {
                 }
                 alt=""
               />
+              
               <h1 className=" text-[2.9vh] font-semibold tracking-tight ">
                 {item.title || item.original_name || item.original_title}
               </h1>

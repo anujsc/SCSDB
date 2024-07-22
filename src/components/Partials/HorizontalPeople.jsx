@@ -8,7 +8,7 @@ function HorizontalPeople({ data }) {
       <div className=" w-full flex ml-9 mr-3 mt-2 gap-[6vh] text-white overflow-x-auto duration-300">
         {data.map((item, index) => (
           <Link
-            to={`/${item.media_type}/details/${item.id}`}
+            to={`/people/details/${item.id}`}
             className=" px-1 bg-transparent h-[38vh] min-w-[15%]"
           >
             {item.profile_path ? (

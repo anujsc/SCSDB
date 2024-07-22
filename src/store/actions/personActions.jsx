@@ -7,14 +7,14 @@ export const asynloadperson = (id) => async (dispatch, getState) => {
     const detail = await axios.get(`/person/${id}`);
     const externalid = await axios.get(`/person/${id}/external_ids`);
     const moviecredits = await axios.get(`/person/${id}/movie_credits`);
-    const videos = await axios.get(`/person/${id}/videos`);
+    const tvcredits = await axios.get(`/person/${id}/tv_credits`);
     const translations = await axios.get(`/person/${id}/translations`);
 
     let bigdata = {
       detail: detail.data,
       externalid: externalid.data,
       moviecredits: moviecredits.data,
-      videos: videos.data.results.find(t=>t.type==="Trailer"),
+      tvcredits: tvcredits.data,
       translations: translations.data.translations.map((i)=>i.english_name),
 
     };
