@@ -21,7 +21,7 @@ function TvDetails() {
   }, [id]);
 
   return info ? (
-    <div className=" h-[160vh] relative w-full ">
+    <div className=" h-[170vh] relative w-full ">
       <img
         className="absolute opacity-65 h-full w-full object-cover  "
         src={`https://image.tmdb.org/t/p/original/${info.detail.backdrop_path}`}
